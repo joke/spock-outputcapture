@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+dependencies {
+    implementation platform(project(':dependencies'))
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.3.0.RELEASE')
+    implementation platform('org.codehaus.groovy:groovy-bom:3.0.4')
+    implementation 'org.codehaus.groovy:groovy'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    testImplementation platform(project(':dependencies'))
+    testImplementation project(':spock-outputcapture')
+    testImplementation 'org.spockframework:spock-core'
+    testImplementation 'org.spockframework:spock-spring'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks 5
+}

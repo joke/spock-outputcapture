@@ -1,0 +1,84 @@
+= `spock-outputcapture`
+
+:icons: font
+
+`spock-outputcapture` captures `System.out` and `System.err` in order to be verified during tests written with the http://spockframework.org/[Spock Framework].
+
+It is intended as groovier replacement for https://spring.io/projects/spring-boot[Spring Boot] `OutputCaptureRule`,
+which has been superseed by the `OutputCaptureExtension` that on the other hand is not working with Spock.
+
+* Groovy syntax
+* Captures both `System.out` and `System.err`
+* Captures logs of the entire Spec via
+** `@Share @OutputCapture globalLogs`
+* Captures logs per Test
+** `@OutputCapture localLogs`
+
+== Gradle Dependency
+
+.build.gradle
+[source,groovy]
+----
+dependencies {
+    testImplementation 'io.github.joke:spock-outputcapture:1.0.0'
+}
+----
+
+== Maven Dependency
+
+.pom.xml
+[source,xml]
+----
+<depenencies>
+  <dependency>
+    <groupId>io.github.joke</groupId>
+    <artifactId>spock-outputcapture</artifactId>
+    <version>1.0.0</version>
+    <scope>test</scope>
+  </dependency>
+</depenencies>
+----
+
+== Usage
+
+Add the output capture to your specification. `globalLogs` and `localLogs` will contain logged messages.
+
+.Basic setup
+[source,groovy]
+----
+// Contains all logs of the entire specification
+@Shared @OutputCapture globalLogs
+
+// contains logs the of current feature method only
+@OutputCapture localLogs
+----
+
+If you need more control over the logs object you can add the type.
+
+.With concrete type
+[source,groovy]
+----
+@Shared @CapturedOutput globalLogs
+@OutputCapture CapturedOutput localLogs
+----
+
+In most cases you want to perform basic regex matching on the output
+
+.Full example of how to use verify the output.
+[source,groovy]
+----
+class LoggingSpec extends Specification {
+
+    @OutputCapture localLogs
+
+    def 'local log contains service name'() {
+        setup:
+        new LoggingService().logYourName()
+
+        expect:
+        localLogs ==~ /(?s).*My name is LoggingService.*/
+    }
+}
+----
+
+Take a look at the link:examples[].

@@ -1,0 +1,14 @@
+plugins {
+    id 'java-platform'
+}
+
+javaPlatform {
+    allowDependencies()
+}
+
+dependencies {
+    api platform('org.spockframework:spock-bom:2.0-M2-groovy-3.0')
+    api platform('org.codehaus.groovy:groovy-bom:3.0.4')
+
+    api 'ch.qos.logback:logback-classic:1.2.3'
+}

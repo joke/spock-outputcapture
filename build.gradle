@@ -1,0 +1,23 @@
+plugins {
+    id 'idea'
+    id 'io.freefair.git-version' version '5.1.0'
+}
+
+allprojects { project ->
+    group 'io.github.joke'
+    description 'deep mocking for the spock framework'
+
+    repositories {
+        mavenCentral()
+    }
+
+    plugins.withType(JavaBasePlugin) {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+wrapper {
+    distributionType = 'ALL'
+    gradleVersion = '6.4.1'
+}

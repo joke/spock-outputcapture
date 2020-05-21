@@ -1,0 +1,19 @@
+plugins {
+    id 'groovy'
+}
+
+dependencies {
+    implementation platform(project(':dependencies'))
+    implementation 'org.codehaus.groovy:groovy'
+    implementation 'ch.qos.logback:logback-classic'
+
+    testImplementation platform(project(':dependencies'))
+    testImplementation project(':spock-outputcapture')
+
+    testImplementation 'org.spockframework:spock-core'
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks 100
+}
