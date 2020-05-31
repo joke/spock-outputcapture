@@ -1,20 +1,10 @@
 package io.github.joke.spockoutputcapture
 
-class CapturedOutput {
-
-    private StringBuffer buffer = new StringBuffer()
+interface CapturedOutput {
 
     @Override
-    String toString() {
-        buffer.toString()
-    }
+    String toString();
 
-    List<String> getLines() {
-        buffer.toList()
-    }
-
-    protected append(String line) {
-        buffer.append(line)
-    }
+    List<String> getLines();
 
 }

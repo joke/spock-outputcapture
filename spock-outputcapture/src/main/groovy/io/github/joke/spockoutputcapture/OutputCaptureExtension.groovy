@@ -13,19 +13,19 @@ import org.spockframework.runtime.model.SpecInfo
 @CompileStatic
 class OutputCaptureExtension extends AbstractAnnotationDrivenExtension<OutputCapture> {
 
-    private Map<FieldInfo, CapturedOutput> fieldBuffers = [:]
+    private Map<FieldInfo, CapturedOutputImpl> fieldBuffers = [:]
 
     @Override
     void visitFieldAnnotation(OutputCapture annotation, FieldInfo field) {
         if (!field.reflection.type.isAssignableFrom(CapturedOutput)) {
             throw new InvalidSpecException("""Wrong type for field %s.
-                |@OutputCapture can only be placed on fields assignableFrom StringBuffer.
+                |@OutputCapture can only be placed on fields assignableFrom CapturedOutput.
                 |Choose either
                 |@OutputCapture logs
                 |@OutputCapture CapturedOutput logs
                 |""".stripMargin()).withArgs(field.name)
         }
-        fieldBuffers[(field)] = new CapturedOutput()
+        fieldBuffers[(field)] = new CapturedOutputImpl()
     }
 
     @Override
@@ -58,7 +58,7 @@ class OutputCaptureExtension extends AbstractAnnotationDrivenExtension<OutputCap
     }
 
     void setNewBufferToField(FieldInfo fieldInfo, Object instance) {
-        def buffer = new CapturedOutput()
+        def buffer = new CapturedOutputImpl()
         fieldBuffers[(fieldInfo)] = buffer
         instance.metaClass.setProperty(instance, fieldInfo.reflection.name, buffer)
     }
@@ -66,7 +66,7 @@ class OutputCaptureExtension extends AbstractAnnotationDrivenExtension<OutputCap
     @TupleConstructor(includeFields = true)
     static class Listener implements IStandardStreamsListener {
 
-        private Map<FieldInfo, CapturedOutput> fieldBuffers
+        private Map<FieldInfo, CapturedOutputImpl> fieldBuffers
 
         @Override
         void standardOut(String message) {
