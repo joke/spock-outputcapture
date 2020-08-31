@@ -2,6 +2,9 @@
 
 :icons: font
 
+image:https://github.com/joke/spock-deepmock/workflows/build/badge.svg[]
+image:https://img.shields.io/maven-central/v/io.github.joke/spock-outputcapture?label=latest%20version[link=https://search.maven.org/artifact/io.github.joke/spock-outputcapture]
+
 `spock-outputcapture` captures `System.out` and `System.err` in order to be verified during tests written with the http://spockframework.org/[Spock Framework].
 
 It is intended as groovier replacement for https://spring.io/projects/spring-boot[Spring Boot] `OutputCaptureRule`,
