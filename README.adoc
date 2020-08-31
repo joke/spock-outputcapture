@@ -14,26 +14,27 @@ which has been superseed by the `OutputCaptureExtension` that on the other hand 
 * Captures logs per Test
 ** `@OutputCapture localLogs`
 
-== Gradle Dependency
+== Dependency setup
+
+.Gradle build.gradle
+image:https://img.shields.io/maven-central/v/io.github.joke/spock-outputcapture?label=latest%20version[link=https://search.maven.org/artifact/io.github.joke/spock-outputcapture]
 
 .build.gradle
 [source,groovy]
 ----
 dependencies {
-    testImplementation 'io.github.joke:spock-outputcapture:1.1.0'
+    testImplementation 'io.github.joke:spock-outputcapture:2.0.0'
 }
 ----
 
-== Maven Dependency
-
-.pom.xml
+.Maven pom.xml
 [source,xml]
 ----
 <depenencies>
   <dependency>
     <groupId>io.github.joke</groupId>
     <artifactId>spock-outputcapture</artifactId>
-    <version>1.1.0</version>
+    <version>2.0.0</version>
     <scope>test</scope>
   </dependency>
 </depenencies>
