@@ -5,8 +5,6 @@ plugins {
 
 dependencies {
     implementation platform(project(':dependencies'))
-    implementation platform('org.springframework.boot:spring-boot-dependencies:2.3.0.RELEASE')
-    implementation platform('org.codehaus.groovy:groovy-bom:3.0.4')
     implementation 'org.codehaus.groovy:groovy'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 

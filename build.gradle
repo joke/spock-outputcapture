@@ -1,6 +1,6 @@
 plugins {
     id 'idea'
-    id 'io.freefair.git-version' version '5.1.0'
+    id 'io.freefair.git-version' version '5.1.1'
 }
 
 allprojects { project ->
@@ -11,13 +11,74 @@ allprojects { project ->
         mavenCentral()
     }
 
-    plugins.withType(JavaBasePlugin) {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+    plugins.withType(MavenPublishPlugin) {
+        project.plugins.apply 'signing'
+
+        plugins.withType(JavaPlugin) {
+            java {
+                withJavadocJar()
+                withSourcesJar()
+            }
+        }
+
+        plugins.withType(SigningPlugin) {
+            afterEvaluate {
+                signing {
+                    required {
+                        gradle.taskGraph.hasTask('publish')
+                    }
+                    useGpgCmd()
+                    sign publishing.publications
+                }
+            }
+        }
+
+        publishing {
+            repositories {
+                maven {
+                    name = 'OSSRH'
+                    url = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+                    credentials(PasswordCredentials)
+                }
+                maven {
+                    name = 'GitHubPackages'
+                    url = uri("https://maven.pkg.github.com/joke/${project.name}")
+                    credentials(PasswordCredentials)
+                }
+            }
+            afterEvaluate {
+                tasks.withType(AbstractPublishToMaven)*.dependsOn(check)
+                publications.each { publication ->
+                    publication.pom {
+                        name = project.name
+                        description = project.description
+                        url = "https://github.com/joke/${project.name}"
+                        licenses {
+                            license {
+                                name = 'GNU GENERAL PUBLIC LICENSE, Version 3'
+                                url = 'https://www.gnu.org/licenses/gpl-3.0.html'
+                            }
+                        }
+                        developers {
+                            developer {
+                                id = 'joke'
+                                name = 'Joke de Buhr'
+                                email = 'joke@seiken.de'
+                            }
+                        }
+                        scm {
+                            connection = "scm:git:git://github.com/joke/${project.name}.git"
+                            developerConnection = "scm:git:git://github.com/joke/${project.name}.git"
+                            url = "http://github.com/joke/${project.name}/tree/master"
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 wrapper {
-    distributionType = 'ALL'
-    gradleVersion = '6.4.1'
+    distributionType = Wrapper.DistributionType.ALL
+    gradleVersion = '6.6.1'
 }
