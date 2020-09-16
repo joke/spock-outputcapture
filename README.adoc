@@ -2,6 +2,7 @@
 
 :icons: font
 
+image:https://img.shields.io/github/license/joke/spring-factory[GitHub]
 image:https://github.com/joke/spock-deepmock/workflows/build/badge.svg[]
 image:https://img.shields.io/maven-central/v/io.github.joke/spock-outputcapture?label=latest%20version[link=https://search.maven.org/artifact/io.github.joke/spock-outputcapture]
 image:https://api.dependabot.com/badges/status?host=github&repo=joke/spock-outputcapture[link=https://github.com/dependabot]
