@@ -63,7 +63,7 @@ If you need more control over the logs object you can add the type.
 .With concrete type
 [source,groovy]
 ----
-@Shared @CapturedOutput globalLogs
+@Shared @OutputCapture CapturedOutput globalLogs
 @OutputCapture CapturedOutput localLogs
 ----
 
