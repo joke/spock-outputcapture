@@ -7,7 +7,7 @@ javaPlatform {
 }
 
 dependencies {
-    api platform('org.springframework.boot:spring-boot-dependencies:2.3.3.RELEASE')
+    api platform('org.springframework.boot:spring-boot-dependencies:2.3.4.RELEASE')
     api platform('org.spockframework:spock-bom:2.0-M3-groovy-3.0')
     api platform('org.codehaus.groovy:groovy-bom:3.0.5')
 
