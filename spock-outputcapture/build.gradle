@@ -17,7 +17,7 @@ java {
 }
 
 dependencies {
-    compileOnly platform('org.codehaus.groovy:groovy-bom:3.0.5')
+    compileOnly platform('org.codehaus.groovy:groovy-bom:3.0.6')
 
     spock13Api platform('org.spockframework:spock-bom:1.3-groovy-2.5')
     spock20Api platform('org.spockframework:spock-bom:2.0-M3-groovy-3.0')
