@@ -8,7 +8,7 @@ javaPlatform {
 
 dependencies {
     api platform('org.springframework.boot:spring-boot-dependencies:2.3.5.RELEASE')
-    api platform('org.spockframework:spock-bom:2.0-M3-groovy-3.0')
+    api platform('org.spockframework:spock-bom:2.0-M4-groovy-3.0')
     api platform('org.codehaus.groovy:groovy-bom:3.0.6')
 
     api 'ch.qos.logback:logback-classic:1.2.3'
