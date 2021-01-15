@@ -11,14 +11,16 @@ allprojects { project ->
         mavenCentral()
     }
 
+    plugins.withType(JavaBasePlugin) {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
     plugins.withType(MavenPublishPlugin) {
         project.plugins.apply 'signing'
 
         plugins.withType(JavaPlugin) {
             java {
-                tasks.withType(JavaCompile) {
-                    options.release = 8
-                }
                 withJavadocJar()
                 withSourcesJar()
             }
