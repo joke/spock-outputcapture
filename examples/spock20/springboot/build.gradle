@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+dependencies {
+    implementation platform(project(':dependencies'))
+    implementation platform('org.codehaus.groovy:groovy-bom:3.0.7')
+    implementation 'org.codehaus.groovy:groovy'
+    implementation 'ch.qos.logback:logback-classic'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation platform('org.spockframework:spock-bom:2.0-M4-groovy-3.0')
+    testImplementation project(':spock-outputcapture')
+    testImplementation 'org.spockframework:spock-core'
+    testImplementation 'org.spockframework:spock-spring'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks 5
+}

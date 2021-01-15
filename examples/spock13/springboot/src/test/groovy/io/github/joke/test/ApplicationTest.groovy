@@ -23,7 +23,7 @@ class ApplicationTest extends Specification {
 
     def 'global messages during startup are captured'() {
         expect:
-        globalLogs ==~ /(?s).*:: Spring Boot ::.*RELEASE.*/
+        globalLogs ==~ /(?s).*:: Spring Boot ::.*/
         globalLogs ==~ /(?s).*Started ApplicationTest in.*/
 
         !(localLogs ==~ 'My name is LoggingService.')
@@ -35,10 +35,10 @@ class ApplicationTest extends Specification {
 
         expect:
         localLogs ==~ /(?s).*My name is LoggingService.*/
-        !(localLogs ==~ /(?s).*:: Spring Boot ::.*RELEASE.*/)
+        !(localLogs ==~ /(?s).*:: Spring Boot ::.*/)
         !(localLogs ==~ /(?s).*Started ApplicationTest in.*/)
 
-        globalLogs ==~ /(?s).*:: Spring Boot ::.*RELEASE.*/
+        globalLogs ==~ /(?s).*:: Spring Boot ::.*/
         globalLogs ==~ /(?s).*Started ApplicationTest in.*/
         globalLogs ==~ /(?s).*My name is LoggingService.*/
     }

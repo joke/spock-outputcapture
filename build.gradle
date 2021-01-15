@@ -16,6 +16,9 @@ allprojects { project ->
 
         plugins.withType(JavaPlugin) {
             java {
+                tasks.withType(JavaCompile) {
+                    options.release = 8
+                }
                 withJavadocJar()
                 withSourcesJar()
             }
