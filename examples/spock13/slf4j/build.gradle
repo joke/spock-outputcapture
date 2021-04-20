@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     implementation platform(project(':dependencies'))
-    implementation platform('org.codehaus.groovy:groovy-bom:2.5.14')
+    implementation platform('org.codehaus.groovy:groovy-bom:3.0.8')
     implementation 'org.codehaus.groovy:groovy'
     implementation 'ch.qos.logback:logback-classic'
 
