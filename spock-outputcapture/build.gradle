@@ -6,12 +6,12 @@ plugins {
 
 dependencies {
     compileOnly platform('org.codehaus.groovy:groovy-bom:3.0.8')
-    compileOnly platform('org.spockframework:spock-bom:2.0-M5-groovy-3.0')
+    compileOnly platform('org.spockframework:spock-bom:2.0-groovy-3.0')
 
     api 'org.spockframework:spock-core'
 
     runtimeOnly platform('org.codehaus.groovy:groovy-bom:3.0.8')
-    runtimeOnly platform('org.spockframework:spock-bom:2.0-M4-groovy-3.0')
+    runtimeOnly platform('org.spockframework:spock-bom:2.0-groovy-3.0')
 }
 
 publishing {
