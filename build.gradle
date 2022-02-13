@@ -6,6 +6,7 @@ plugins {
 allprojects { project ->
     group 'io.github.joke'
     description 'deep mocking for the spock framework'
+    version rootProject.version
 
     repositories {
         mavenCentral()
