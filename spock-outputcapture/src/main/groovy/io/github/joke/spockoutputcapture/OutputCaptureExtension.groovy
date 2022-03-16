@@ -5,13 +5,13 @@ import groovy.transform.TupleConstructor
 import org.spockframework.runtime.IStandardStreamsListener
 import org.spockframework.runtime.InvalidSpecException
 import org.spockframework.runtime.StandardStreamsCapturer
-import org.spockframework.runtime.extension.AbstractAnnotationDrivenExtension
+import org.spockframework.runtime.extension.IAnnotationDrivenExtension
 import org.spockframework.runtime.extension.IMethodInvocation
 import org.spockframework.runtime.model.FieldInfo
 import org.spockframework.runtime.model.SpecInfo
 
 @CompileStatic
-class OutputCaptureExtension extends AbstractAnnotationDrivenExtension<OutputCapture> {
+class OutputCaptureExtension implements IAnnotationDrivenExtension<OutputCapture> {
 
     private Map<FieldInfo, CapturedOutputImpl> fieldBuffers = [:]
 
