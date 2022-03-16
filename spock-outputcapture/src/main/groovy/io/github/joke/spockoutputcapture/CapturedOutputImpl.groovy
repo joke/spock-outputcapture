@@ -15,7 +15,7 @@ class CapturedOutputImpl implements CapturedOutput {
 
     @Override
     List<String> getLines() {
-        buffer.toString().split('\n')
+        buffer.toString().split('(\r\n|\n|\r)')
     }
 
 }
