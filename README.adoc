@@ -28,21 +28,21 @@ image:https://img.shields.io/maven-central/v/io.github.joke/spock-outputcapture?
 [source,groovy]
 ----
 dependencies {
-    testImplementation 'io.github.joke:spock-outputcapture:2.0.0'
+    testImplementation 'io.github.joke:spock-outputcapture:2.2.0'
 }
 ----
 
 .Maven pom.xml
 [source,xml]
 ----
-<depenencies>
+<dependencies>
   <dependency>
     <groupId>io.github.joke</groupId>
     <artifactId>spock-outputcapture</artifactId>
-    <version>2.0.0</version>
+    <version>2.2.0</version>
     <scope>test</scope>
   </dependency>
-</depenencies>
+</dependencies>
 ----
 
 == Usage
@@ -68,7 +68,7 @@ If you need more control over the logs object you can add the type.
 @OutputCapture CapturedOutput localLogs
 ----
 
-In most cases you want to perform basic regex matching on the output
+In most cases you want to perform basic regex matching on the output.
 
 .Full example of how to use verify the output.
 [source,groovy]
