@@ -1,8 +1,10 @@
 package io.github.joke.spockoutputcapture
 
+import groovy.transform.CompileStatic
 import groovy.transform.PackageScope
 
 @PackageScope
+@CompileStatic
 class CapturedOutputImpl implements CapturedOutput {
 
     @Delegate
@@ -15,7 +17,7 @@ class CapturedOutputImpl implements CapturedOutput {
 
     @Override
     List<String> getLines() {
-        buffer.toString().split('(\r\n|\n|\r)')
+        buffer.toString().split('(\r\n|\n|\r)') as List<String>
     }
 
 }

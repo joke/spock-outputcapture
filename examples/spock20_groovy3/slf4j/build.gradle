@@ -1,0 +1,18 @@
+plugins {
+    id 'groovy'
+}
+
+dependencies {
+    implementation platform('org.codehaus.groovy:groovy-bom:3.0.9')
+    implementation 'org.codehaus.groovy:groovy'
+    implementation 'org.slf4j:slf4j-simple:1.7.36'
+
+    implementation platform('org.spockframework:spock-bom:2.0-groovy-3.0')
+    testImplementation project(':spock-outputcapture')
+    testImplementation 'org.spockframework:spock-core'
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks 100
+}
