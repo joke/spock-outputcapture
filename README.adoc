@@ -28,7 +28,7 @@ image:https://img.shields.io/maven-central/v/io.github.joke/spock-outputcapture?
 [source,groovy]
 ----
 dependencies {
-    testImplementation 'io.github.joke:spock-outputcapture:2.2.0'
+    testImplementation 'io.github.joke:spock-outputcapture:3.0.0'
 }
 ----
 
@@ -39,7 +39,7 @@ dependencies {
   <dependency>
     <groupId>io.github.joke</groupId>
     <artifactId>spock-outputcapture</artifactId>
-    <version>2.2.0</version>
+    <version>3.0.0</version>
     <scope>test</scope>
   </dependency>
 </dependencies>
