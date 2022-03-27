@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation platform('org.springframework.boot:spring-boot-dependencies:2.6.4')
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.6.5')
     implementation platform('org.codehaus.groovy:groovy-bom:3.0.9')
     implementation 'org.codehaus.groovy:groovy'
     implementation 'org.springframework.boot:spring-boot-starter-web'
