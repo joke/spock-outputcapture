@@ -88,3 +88,7 @@ class LoggingSpec extends Specification {
 ----
 
 Take a look at the link:examples[].
+
+== Contributing
+
+If you're looking to contribute, you can find additional information in link:CONTRIBUTING.adoc[here].
