@@ -37,9 +37,4 @@ branches:
       - context: DCO
         app_id: 1861
     enforce_admins: false
-    required_signatures: true
     required_linear_history: true
-    restrictions:
-      apps: []
-      users: []
-      teams: []
