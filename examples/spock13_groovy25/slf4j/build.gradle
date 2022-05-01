@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation platform('org.codehaus.groovy:groovy-bom:2.5.16')
+    implementation platform('org.codehaus.groovy:groovy-bom:3.0.10')
     implementation 'org.codehaus.groovy:groovy'
     implementation 'org.slf4j:slf4j-simple:1.7.36'
 
