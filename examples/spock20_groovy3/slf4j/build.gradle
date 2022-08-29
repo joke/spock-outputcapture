@@ -7,7 +7,7 @@ dependencies {
     implementation 'org.codehaus.groovy:groovy'
     implementation 'org.slf4j:slf4j-simple:1.7.36'
 
-    implementation platform('org.spockframework:spock-bom:2.0-groovy-3.0')
+    implementation platform('org.spockframework:spock-bom:2.1-groovy-3.0')
     testImplementation project(':spock-outputcapture')
     testImplementation 'org.spockframework:spock-core'
 }
