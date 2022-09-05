@@ -94,7 +94,7 @@ dependencies {
     spock22groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
 
     spock22groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
-    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.2')
+    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.4')
     spock22groovy40Implementation platform('org.spockframework:spock-bom:2.2-groovy-4.0')
     spock22groovy40Implementation project(':spock-outputcapture')
     spock22groovy40Implementation 'org.spockframework:spock-spring'
