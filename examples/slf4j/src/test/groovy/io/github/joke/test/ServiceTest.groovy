@@ -22,7 +22,7 @@ class ServiceTest extends Specification {
         expect:
         localLogs ==~ /(?s).*INFO io.github.joke.test.ErrorLogger - Logger with name localLogger created.*/
         localLogs ==~ /(?s).*Hello World.*/
-        localLogs !==~ /(?s).*Hello Test.*/
+        !(localLogs ==~ /(?s).*Hello Test.*/)
     }
 
     def 'local logging service: Hello Test'() {
