@@ -15,6 +15,11 @@ updates:
     prefix: chore
     include: scope
   ignore:
-  - dependency-name: groovy-bom
+  - dependency-name: org.codehaus.groovy:groovy-bom
     update-types:
-    - version-update:semver-patch
+    - version-update:semver-major
+    - version-update:semver-minor
+  - dependency-name: org.spockframework:spock-bom
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
