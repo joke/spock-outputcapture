@@ -9,17 +9,17 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: "CodeQL"
+name: CodeQL
 
 on:
   push:
     branches:
-      - main
+    - main
   pull_request:
     branches:
-      - main
+    - main
   schedule:
-    - cron: '16 11 * * 6'
+  - cron: 16 11 * * 6
 
 jobs:
   analyze:
@@ -34,7 +34,7 @@ jobs:
       fail-fast: false
       matrix:
         language:
-          - java
+        - java
 
     steps:
     - name: Checkout repository
@@ -61,4 +61,3 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-
