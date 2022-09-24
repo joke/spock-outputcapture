@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/joke/spock-outputcapture/compare/v3.0.0...v3.0.1) (2022-09-05)
+
+
+### Bug Fixes
+
+* base class issue with older groovy versions ([9c461af](https://github.com/joke/spock-outputcapture/commit/9c461af3d5fc8e655b40e358feeae5c488b3b0d0))
+
 ## 3.0.0 (2022-03-18)
 
 

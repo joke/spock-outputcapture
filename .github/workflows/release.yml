@@ -3,37 +3,39 @@ name: release
 on:
   push:
     branches:
-      - main
+    - main
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v3.1
-        id: release
-        with:
-          release-type: simple
-      - uses: actions/checkout@v3
-        if: ${{ steps.release.outputs.release_created }}
-        with:
-          ref: ${{ steps.release.outputs.tag_name }}
-      - uses: crazy-max/ghaction-import-gpg@v4
-        if: ${{ steps.release.outputs.release_created }}
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-      - uses: actions/setup-java@v2
-        if: ${{ steps.release.outputs.release_created }}
-        with:
-          java-version: 8
-          distribution: zulu
-      - name: build
-        if: ${{ steps.release.outputs.release_created }}
-        run: ./gradlew check
-      - name: publish
-        if: ${{ steps.release.outputs.release_created }}
-        run: ./gradlew publish
-        env:
-          ORG_GRADLE_PROJECT_OSSRHUsername: ${{ secrets.OSSRH_USERNAME }}
-          ORG_GRADLE_PROJECT_OSSRHPassword: ${{ secrets.OSSRH_TOKEN }}
-          ORG_GRADLE_PROJECT_GitHubPackagesUsername: ${{ secrets.GITHUB_ACTOR }}
-          ORG_GRADLE_PROJECT_GitHubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}
+    - uses: GoogleCloudPlatform/release-please-action@v3.5
+      id: release
+      with:
+        release-type: simple
+
+  publish:
+    needs: release-please
+    runs-on: ubuntu-latest
+    if: ${{ needs.release-please.outputs.release_created }}
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ needs.release-please.outputs.tag_name }}
+    - uses: crazy-max/ghaction-import-gpg@v5
+      with:
+        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+    - uses: actions/setup-java@v3
+      with:
+        java-version: 8
+        distribution: zulu
+    - name: publish
+      run: ./gradlew publish
+      env:
+        ORG_GRADLE_PROJECT_OSSRHUsername: ${{ secrets.OSSRH_USERNAME }}
+        ORG_GRADLE_PROJECT_OSSRHPassword: ${{ secrets.OSSRH_TOKEN }}
+        ORG_GRADLE_PROJECT_GitHubPackagesUsername: ${{ secrets.GITHUB_ACTOR }}
+        ORG_GRADLE_PROJECT_GitHubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}

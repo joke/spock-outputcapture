@@ -1,21 +1,21 @@
 name: build
 
 on:
+  pull_request:
   push:
     branches:
-    - '**'
-  pull_request:
+    - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-java@v2
-        with:
-          java-version: 8
-          distribution: zulu
-      - name: build
-        run: ./gradlew check
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-java@v3
+      with:
+        java-version: 8
+        distribution: zulu
+    - name: build
+      run: ./gradlew check
