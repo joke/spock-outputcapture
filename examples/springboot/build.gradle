@@ -4,7 +4,12 @@ plugins {
 }
 
 def spock13 = ['spock13groovy24', 'spock13groovy25']
-def spock2x = ['spock20groovy25', 'spock20groovy30', 'spock21groovy25', 'spock21groovy30', 'spock22groovy25', 'spock22groovy30', 'spock22groovy40']
+def spock2x = [
+        'spock20groovy25', 'spock20groovy30',
+        'spock21groovy25', 'spock21groovy30',
+        'spock22groovy25', 'spock22groovy30', 'spock22groovy40',
+        'spock23groovy25', 'spock23groovy30', 'spock23groovy40'
+]
 
 [*spock13, *spock2x].forEach {
     sourceSets.create(it) {
@@ -99,6 +104,29 @@ dependencies {
     spock22groovy40Implementation project(':spock-outputcapture')
     spock22groovy40Implementation 'org.spockframework:spock-spring'
     spock22groovy40Implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    spock23groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.3')) {
+        exclude group: 'org.codehaus.groovy', module: '*'
+    }
+    spock23groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.16')
+    spock23groovy25Implementation platform('org.spockframework:spock-bom:2.3-groovy-2.5')
+    spock23groovy25Implementation project(':spock-outputcapture')
+    spock23groovy25Implementation 'org.spockframework:spock-spring'
+    spock23groovy25Implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    spock23groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
+    spock23groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.9')
+    spock23groovy30Implementation platform('org.spockframework:spock-bom:2.3-groovy-3.0')
+    spock23groovy30Implementation project(':spock-outputcapture')
+    spock23groovy30Implementation 'org.spockframework:spock-spring'
+    spock23groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    spock23groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
+    spock23groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.6')
+    spock23groovy40Implementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
+    spock23groovy40Implementation project(':spock-outputcapture')
+    spock23groovy40Implementation 'org.spockframework:spock-spring'
+    spock23groovy40Implementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 spock13.forEach { source ->
