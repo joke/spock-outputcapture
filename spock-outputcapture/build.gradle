@@ -5,10 +5,10 @@ plugins {
 }
 
 dependencies {
-    compileOnly platform('org.codehaus.groovy:groovy-bom:3.0.9')
-    compileOnly platform('org.spockframework:spock-bom:2.0-groovy-3.0')
+    compileOnly platform('org.apache.groovy:groovy-bom:4.0.6')
+    compileOnly platform('org.spockframework:spock-bom:2.3-groovy-4.0')
 
-    compileOnly 'org.codehaus.groovy:groovy'
+    compileOnly 'org.apache.groovy:groovy'
     compileOnly 'org.spockframework:spock-core'
 }
 
