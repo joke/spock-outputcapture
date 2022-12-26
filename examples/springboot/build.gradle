@@ -19,7 +19,7 @@ def spock2x = [
 }
 
 dependencies {
-    compileOnly platform('org.springframework.boot:spring-boot-dependencies:2.7.5')
+    compileOnly platform('org.springframework.boot:spring-boot-dependencies:3.0.1')
     compileOnly 'org.springframework.boot:spring-boot-starter-web'
 
     testImplementation platform('org.springframework.boot:spring-boot-dependencies:2.7.5')
@@ -30,7 +30,7 @@ dependencies {
     testImplementation 'org.spockframework:spock-spring'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock13groovy24Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.3')) {
+    spock13groovy24Implementation(platform('org.springframework.boot:spring-boot-dependencies:3.0.1')) {
         exclude group: 'org.codehaus.groovy', module: '*'
     }
     spock13groovy24Implementation platform('org.codehaus.groovy:groovy-bom:2.4.21')
