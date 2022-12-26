@@ -77,7 +77,7 @@ dependencies {
     spock22groovy30Implementation 'org.slf4j:slf4j-simple:2.0.2'
     spock22groovy30Implementation 'org.spockframework:spock-core'
 
-    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.6')
+    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.7')
     spock22groovy40Implementation platform('org.spockframework:spock-bom:2.2-groovy-4.0')
     spock22groovy40Implementation project(':spock-outputcapture')
     spock22groovy40Implementation 'org.slf4j:slf4j-simple:2.0.2'
