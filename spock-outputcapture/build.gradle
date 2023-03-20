@@ -6,7 +6,7 @@ plugins {
 
 dependencies {
     compileOnly platform('org.apache.groovy:groovy-bom:4.0.6')
-    compileOnly platform('org.spockframework:spock-bom:2.3-groovy-4.0')
+    compileOnly platform('org.spockframework:spock-bom:1.3-groovy-2.5')
 
     compileOnly 'org.apache.groovy:groovy'
     compileOnly 'org.spockframework:spock-core'
