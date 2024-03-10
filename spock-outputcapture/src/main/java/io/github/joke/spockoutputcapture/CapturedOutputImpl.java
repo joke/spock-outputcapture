@@ -18,6 +18,11 @@ public class CapturedOutputImpl implements CapturedOutput {
         return asList(buffer.toString().split("(\\r\\n|\\n|\\r)"));
     }
 
+    @Override
+    public void clear() {
+        buffer.setLength(0);
+    }
+
     synchronized StringBuffer append(String str) {
         return buffer.append(str);
     }
