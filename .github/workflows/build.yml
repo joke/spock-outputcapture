@@ -13,9 +13,9 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - uses: actions/setup-java@v4
-      with:
-        java-version: 8
-        distribution: zulu
+    - uses: jdx/mise-action@v2
+    - uses: gradle/actions/setup-gradle@v3
     - name: build
       run: ./gradlew check
+      env:
+        ASDF_DATA_DIR: /home/runner/.local/share/mise
