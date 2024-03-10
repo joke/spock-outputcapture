@@ -39,7 +39,7 @@ dependencies {
     spock13groovy25Implementation project(':spock-outputcapture')
     spock13groovy25Implementation 'org.slf4j:slf4j-simple:2.0.7'
     spock13groovy25Implementation 'org.spockframework:spock-core'
-    spock13groovy25Implementation 'org.objenesis:objenesis:2.6'
+    spock13groovy25Implementation 'org.objenesis:objenesis:3.3'
 
     spock20groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.16')
     spock20groovy25Implementation platform('org.spockframework:spock-bom:2.0-groovy-2.5')

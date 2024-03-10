@@ -48,7 +48,7 @@ dependencies {
     spock13groovy25Implementation project(':spock-outputcapture')
     spock13groovy25Implementation 'org.spockframework:spock-spring'
     spock13groovy25Implementation 'org.springframework.boot:spring-boot-starter-test'
-    spock13groovy25Implementation 'org.objenesis:objenesis:2.6'
+    spock13groovy25Implementation 'org.objenesis:objenesis:3.3'
 
     spock20groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.3')) {
         exclude group: 'org.codehaus.groovy', module: '*'
