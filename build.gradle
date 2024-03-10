@@ -12,7 +12,7 @@ allprojects { project ->
         mavenCentral()
     }
 
-    plugins.withType(JavaBasePlugin) {
+    plugins.withType(JavaBasePlugin).configureEach {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
@@ -20,14 +20,14 @@ allprojects { project ->
     plugins.withType(MavenPublishPlugin) {
         project.plugins.apply 'signing'
 
-        plugins.withType(JavaPlugin) {
+        plugins.withType(JavaPlugin).configureEach {
             java {
                 withJavadocJar()
                 withSourcesJar()
             }
         }
 
-        plugins.withType(SigningPlugin) {
+        plugins.withType(SigningPlugin).configureEach {
             afterEvaluate {
                 signing {
                     required {
