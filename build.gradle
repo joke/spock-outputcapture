@@ -69,13 +69,13 @@ allprojects { project ->
                             developer {
                                 id = 'joke'
                                 name = 'Joke de Buhr'
-                                email = 'joke@seiken.de'
+                                email = 'joke@xckk.de'
                             }
                         }
                         scm {
                             connection = "scm:git:git://github.com/joke/${project.name}.git"
                             developerConnection = "scm:git:git://github.com/joke/${project.name}.git"
-                            url = "http://github.com/joke/${project.name}/tree/master"
+                            url = "http://github.com/joke/${project.name}/tree/main"
                         }
                     }
                 }
