@@ -28,13 +28,12 @@ jobs:
     - uses: crazy-max/ghaction-import-gpg@v6
       with:
         gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-    - uses: actions/setup-java@v4
-      with:
-        java-version: 8
-        distribution: zulu
+    - uses: jdx/mise-action@v2
+    - uses: gradle/actions/setup-gradle@v3
     - name: publish
       run: ./gradlew publish
       env:
+        ASDF_DATA_DIR: /home/runner/.local/share/mise
         ORG_GRADLE_PROJECT_OSSRHUsername: ${{ secrets.OSSRH_USERNAME }}
         ORG_GRADLE_PROJECT_OSSRHPassword: ${{ secrets.OSSRH_TOKEN }}
         ORG_GRADLE_PROJECT_GitHubPackagesUsername: ${{ secrets.GITHUB_ACTOR }}

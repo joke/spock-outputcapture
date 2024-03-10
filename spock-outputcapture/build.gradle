@@ -16,6 +16,12 @@ dependencies {
     compileOnly 'org.spockframework:spock-core'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
 publishing {
     publications {
         spockOutputCapture(MavenPublication) {
