@@ -1,5 +1,6 @@
 rootProject.name = 'spock-outputcapture'
 
+include 'dependencies'
 include 'spock-outputcapture'
 include 'examples:slf4j'
 include 'examples:springboot'
