@@ -8,4 +8,6 @@ javaPlatform {
 
 dependencies {
     api platform('org.springframework.boot:spring-boot-dependencies:2.6.3')
+
+    api 'org.projectlombok:lombok:1.18.30'
 }

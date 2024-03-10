@@ -1,15 +1,10 @@
 package io.github.joke.spockoutputcapture;
 
-import groovy.transform.CompileStatic;
-import groovy.transform.PackageScope;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.asList;
 
-class CapturedOutputImpl implements CapturedOutput {
+public class CapturedOutputImpl implements CapturedOutput {
 
     private final StringBuffer buffer = new StringBuffer();
 
