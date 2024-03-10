@@ -18,90 +18,90 @@ versions.forEach {
 }
 
 dependencies {
-    compileOnly platform('org.springframework.boot:spring-boot-dependencies:2.7.5')
+    compileOnly platform('org.springframework.boot:spring-boot-dependencies:2.7.18')
     compileOnly 'org.springframework.boot:spring-boot-starter-web'
 
-    testImplementation platform('org.springframework.boot:spring-boot-dependencies:2.7.5')
-    testImplementation platform('org.codehaus.groovy:groovy-bom:3.0.9')
+    testImplementation platform('org.springframework.boot:spring-boot-dependencies:2.7.18')
+    testImplementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
     testImplementation platform('org.spockframework:spock-bom:2.1-groovy-3.0')
     testImplementation project(':spock-outputcapture')
     testImplementation 'org.slf4j:slf4j-simple'
     testImplementation 'org.spockframework:spock-spring'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock20groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.3')) {
+    spock20groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.18')) {
         exclude group: 'org.codehaus.groovy', module: '*'
     }
-    spock20groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.16')
+    spock20groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.23')
     spock20groovy25Implementation platform('org.spockframework:spock-bom:2.0-groovy-2.5')
     spock20groovy25Implementation project(':spock-outputcapture')
     spock20groovy25Implementation 'org.spockframework:spock-spring'
     spock20groovy25Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock20groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
-    spock20groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.9')
+    spock20groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.18')
+    spock20groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
     spock20groovy30Implementation platform('org.spockframework:spock-bom:2.0-groovy-3.0')
     spock20groovy30Implementation project(':spock-outputcapture')
     spock20groovy30Implementation 'org.spockframework:spock-spring'
     spock20groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock21groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.3')) {
+    spock21groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.18')) {
         exclude group: 'org.codehaus.groovy', module: '*'
     }
-    spock21groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.16')
+    spock21groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.23')
     spock21groovy25Implementation platform('org.spockframework:spock-bom:2.1-groovy-2.5')
     spock21groovy25Implementation project(':spock-outputcapture')
     spock21groovy25Implementation 'org.spockframework:spock-spring'
     spock21groovy25Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock21groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
-    spock21groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.9')
+    spock21groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.18')
+    spock21groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
     spock21groovy30Implementation platform('org.spockframework:spock-bom:2.1-groovy-3.0')
     spock21groovy30Implementation project(':spock-outputcapture')
     spock21groovy30Implementation 'org.spockframework:spock-spring'
     spock21groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock22groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.3')) {
+    spock22groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.18')) {
         exclude group: 'org.codehaus.groovy', module: '*'
     }
-    spock22groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.16')
+    spock22groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.23')
     spock22groovy25Implementation platform('org.spockframework:spock-bom:2.2-groovy-2.5')
     spock22groovy25Implementation project(':spock-outputcapture')
     spock22groovy25Implementation 'org.spockframework:spock-spring'
     spock22groovy25Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock22groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
-    spock22groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.9')
+    spock22groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.18')
+    spock22groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
     spock22groovy30Implementation platform('org.spockframework:spock-bom:2.2-groovy-3.0')
     spock22groovy30Implementation project(':spock-outputcapture')
     spock22groovy30Implementation 'org.spockframework:spock-spring'
     spock22groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock22groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
-    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.6')
+    spock22groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.18')
+    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.19')
     spock22groovy40Implementation platform('org.spockframework:spock-bom:2.2-groovy-4.0')
     spock22groovy40Implementation project(':spock-outputcapture')
     spock22groovy40Implementation 'org.spockframework:spock-spring'
     spock22groovy40Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock23groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.3')) {
+    spock23groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:2.7.18')) {
         exclude group: 'org.codehaus.groovy', module: '*'
     }
-    spock23groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.16')
+    spock23groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.23')
     spock23groovy25Implementation platform('org.spockframework:spock-bom:2.3-groovy-2.5')
     spock23groovy25Implementation project(':spock-outputcapture')
     spock23groovy25Implementation 'org.spockframework:spock-spring'
     spock23groovy25Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock23groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
-    spock23groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.9')
+    spock23groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.18')
+    spock23groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
     spock23groovy30Implementation platform('org.spockframework:spock-bom:2.3-groovy-3.0')
     spock23groovy30Implementation project(':spock-outputcapture')
     spock23groovy30Implementation 'org.spockframework:spock-spring'
     spock23groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
 
-    spock23groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.3')
-    spock23groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.6')
+    spock23groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.18')
+    spock23groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.19')
     spock23groovy40Implementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
     spock23groovy40Implementation project(':spock-outputcapture')
     spock23groovy40Implementation 'org.spockframework:spock-spring'
