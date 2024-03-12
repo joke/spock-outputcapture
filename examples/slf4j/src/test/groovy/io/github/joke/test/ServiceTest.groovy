@@ -47,5 +47,4 @@ class ServiceTest extends Specification {
         globalLogs ==~ /(?s).*Hello Universe.*/
         localLogs ==~ /(?s).*Hello Universe.*/
     }
-
 }
