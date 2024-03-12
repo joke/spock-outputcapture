@@ -16,6 +16,8 @@ jobs:
       id: release
       with:
         release-type: simple
+        signoff: Joke de Buhr <joke@xckk.de>
+        token: ${{ secrets.RELEASE_PLEASE }}
 
   publish:
     needs: release-please
