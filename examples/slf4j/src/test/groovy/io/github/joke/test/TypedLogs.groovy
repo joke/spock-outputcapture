@@ -64,4 +64,21 @@ class TypedLogs extends Specification {
         globalLogs.lines ==~ /(?s).*Hello Universe.*/
         localLogs.lines==~ /(?s).*Hello Universe.*/
     }
+
+    def 'clear logger'() {
+        when:
+        localLogger.logSomething('Hello Test')
+
+        then:
+        localLogs ==~ /(?s).*Hello Test.*/
+
+        and:
+        when:
+        localLogs.clear()
+        localLogger.logSomething('Hello again Test')
+
+        then:
+        !(localLogs ==~ /(?s).*Hello Test.*/)
+        localLogs ==~ /(?s).*Hello again Test.*/
+    }
 }
