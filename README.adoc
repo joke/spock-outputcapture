@@ -19,7 +19,7 @@ which has been superseed by the `OutputCaptureExtension` that on the other hand 
 ** `@Share @OutputCapture globalLogs`
 * Captures logs per Test
 ** `@OutputCapture localLogs`
-* Working with Spock Framework 2.0, 2.1, 2.2 and 2.3
+* Working with Spock Framework 2.0, 2.1, 2.2, 2.3 and 2.4-M2
 
 == Dependency setup
 

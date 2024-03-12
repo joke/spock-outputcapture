@@ -7,7 +7,8 @@ def versions = [
         'spock20groovy25', 'spock20groovy30',
         'spock21groovy25', 'spock21groovy30',
         'spock22groovy25', 'spock22groovy30', 'spock22groovy40',
-        'spock23groovy25', 'spock23groovy30', 'spock23groovy40'
+        'spock23groovy25', 'spock23groovy30', 'spock23groovy40',
+        'spock24groovy25', 'spock24groovy30', 'spock24groovy40'
 ]
 
 versions.forEach {
@@ -112,6 +113,29 @@ dependencies {
     spock23groovy40Implementation project(':spock-outputcapture')
     spock23groovy40Implementation 'org.spockframework:spock-spring'
     spock23groovy40Implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    spock24groovy25Implementation(platform('org.springframework.boot:spring-boot-dependencies:3.2.3')) {
+        exclude group: 'org.codehaus.groovy', module: '*'
+    }
+    spock24groovy25Implementation platform('org.codehaus.groovy:groovy-bom:2.5.23')
+    spock24groovy25Implementation platform('org.spockframework:spock-bom:2.4-M2-groovy-2.5')
+    spock24groovy25Implementation project(':spock-outputcapture')
+    spock24groovy25Implementation 'org.spockframework:spock-spring'
+    spock24groovy25Implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    spock24groovy30Implementation platform('org.springframework.boot:spring-boot-dependencies:3.2.3')
+    spock24groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
+    spock24groovy30Implementation platform('org.spockframework:spock-bom:2.4-M2-groovy-3.0')
+    spock24groovy30Implementation project(':spock-outputcapture')
+    spock24groovy30Implementation 'org.spockframework:spock-spring'
+    spock24groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    spock24groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:3.2.3')
+    spock24groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.19')
+    spock24groovy40Implementation platform('org.spockframework:spock-bom:2.4-M2-groovy-4.0')
+    spock24groovy40Implementation project(':spock-outputcapture')
+    spock24groovy40Implementation 'org.spockframework:spock-spring'
+    spock24groovy40Implementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 versions.forEach { source ->
