@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/joke/spock-outputcapture/compare/v4.0.0...v4.0.1) (2024-03-16)
+
+
+### Bug Fixes
+
+* jdk dependend string splitting [#157](https://github.com/joke/spock-outputcapture/issues/157) ([33d519c](https://github.com/joke/spock-outputcapture/commit/33d519cedd9bc0f79970be97e71e0183af1e5cf9))
+
 ## [4.0.0](https://github.com/joke/spock-outputcapture/compare/v3.0.1...v4.0.0) (2024-03-12)
 
 
