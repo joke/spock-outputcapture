@@ -12,10 +12,11 @@ jobs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
-    - uses: GoogleCloudPlatform/release-please-action@v4.0
+    - uses: GoogleCloudPlatform/release-please-action@v3
       id: release
       with:
         release-type: simple
+        # signoff does work with v4 https://github.com/google-github-actions/release-please-action/issues/904
         signoff: Joke de Buhr <joke@xckk.de>
         token: ${{ secrets.RELEASE_PLEASE }}
 
