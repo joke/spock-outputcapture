@@ -9,5 +9,5 @@ javaPlatform {
 dependencies {
     api platform('org.slf4j:slf4j-bom:2.0.12')
 
-    api 'org.projectlombok:lombok:1.18.30'
+    api 'org.projectlombok:lombok:1.18.32'
 }
