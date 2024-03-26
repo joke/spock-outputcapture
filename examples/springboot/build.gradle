@@ -85,7 +85,7 @@ dependencies {
     spock22groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
 
     spock22groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.1')
-    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.19')
+    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.20')
     spock22groovy40Implementation platform('org.spockframework:spock-bom:2.2-groovy-4.0')
     spock22groovy40Implementation project(':spock-outputcapture')
     spock22groovy40Implementation 'org.spockframework:spock-spring'
@@ -108,7 +108,7 @@ dependencies {
     spock23groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
 
     spock23groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.1')
-    spock23groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.19')
+    spock23groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.20')
     spock23groovy40Implementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
     spock23groovy40Implementation project(':spock-outputcapture')
     spock23groovy40Implementation 'org.spockframework:spock-spring'
@@ -131,7 +131,7 @@ dependencies {
     spock24groovy30Implementation 'org.springframework.boot:spring-boot-starter-test'
 
     spock24groovy40Implementation platform('org.springframework.boot:spring-boot-dependencies:3.2.3')
-    spock24groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.19')
+    spock24groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.20')
     spock24groovy40Implementation platform('org.spockframework:spock-bom:2.4-M2-groovy-4.0')
     spock24groovy40Implementation project(':spock-outputcapture')
     spock24groovy40Implementation 'org.spockframework:spock-spring'
