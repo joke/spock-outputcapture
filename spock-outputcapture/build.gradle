@@ -9,7 +9,7 @@ dependencies {
 
     compileOnly platform(project(':dependencies'))
     compileOnly platform('org.apache.groovy:groovy-bom:4.0.20')
-    compileOnly platform('org.spockframework:spock-bom:2.3-groovy-4.0')
+    compileOnly platform('org.spockframework:spock-bom:2.0-groovy-3.0')
     compileOnly 'org.projectlombok:lombok'
 
     compileOnly 'org.apache.groovy:groovy'
