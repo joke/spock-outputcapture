@@ -32,7 +32,7 @@ jobs:
       with:
         gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
     - uses: jdx/mise-action@v2
-    - uses: gradle/actions/setup-gradle@v3
+    - uses: gradle/actions/setup-gradle@v4
     - name: publish
       run: ./gradlew publish
       env:
