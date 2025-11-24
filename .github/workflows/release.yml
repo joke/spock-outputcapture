@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.release-please.outputs.release_created }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         ref: ${{ needs.release-please.outputs.tag_name }}
     - uses: crazy-max/ghaction-import-gpg@v6
