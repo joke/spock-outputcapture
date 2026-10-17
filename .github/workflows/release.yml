@@ -2,42 +2,20 @@ name: release
 
 on:
   push:
-    branches:
-    - main
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish, e.g. v1.0.0. Set only to re-publish a failed release.
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-      tag_name: ${{ steps.release.outputs.tag_name }}
-    steps:
-    - uses: GoogleCloudPlatform/release-please-action@v4
-      id: release
-      with:
-        release-type: simple
-        # signoff does work with v4 https://github.com/google-github-actions/release-please-action/issues/904
-        signoff: Joke de Buhr <joke@xckk.de>
-        token: ${{ secrets.RELEASE_PLEASE }}
-
-  publish:
-    needs: release-please
-    runs-on: ubuntu-latest
-    if: ${{ needs.release-please.outputs.release_created }}
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        ref: ${{ needs.release-please.outputs.tag_name }}
-    - uses: crazy-max/ghaction-import-gpg@v6
-      with:
-        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-    - uses: jdx/mise-action@v2
-    - uses: gradle/actions/setup-gradle@v4
-    - name: publish
-      run: ./gradlew publish
-      env:
-        ASDF_DATA_DIR: /home/runner/.local/share/mise
-        ORG_GRADLE_PROJECT_OSSRHUsername: ${{ secrets.OSSRH_USERNAME }}
-        ORG_GRADLE_PROJECT_OSSRHPassword: ${{ secrets.OSSRH_TOKEN }}
-        ORG_GRADLE_PROJECT_GitHubPackagesUsername: ${{ secrets.GITHUB_ACTOR }}
-        ORG_GRADLE_PROJECT_GitHubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}
+  release:
+    uses: joke/workflows/.github/workflows/gradle-release.yml@main
+    with:
+      tag: ${{ inputs.tag || '' }}
+    secrets: inherit
