@@ -23,7 +23,7 @@ dependencies {
     implementation 'org.slf4j:slf4j-api'
 
     testImplementation platform(project(':dependencies'))
-    testImplementation platform('org.apache.groovy:groovy-bom:4.0.20')
+    testImplementation platform('org.apache.groovy:groovy-bom:4.0.33')
     testImplementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
     testImplementation project(':spock-outputcapture')
     testImplementation 'org.slf4j:slf4j-simple'
@@ -37,7 +37,7 @@ dependencies {
     spock20groovy25Implementation 'org.spockframework:spock-core'
 
     spock20groovy30Implementation platform(project(':dependencies'))
-    spock20groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
+    spock20groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.25')
     spock20groovy30Implementation platform('org.spockframework:spock-bom:2.0-groovy-3.0')
     spock20groovy30Implementation project(':spock-outputcapture')
     spock20groovy30Implementation 'org.slf4j:slf4j-simple'
@@ -51,7 +51,7 @@ dependencies {
     spock21groovy25Implementation 'org.spockframework:spock-core'
 
     spock21groovy30Implementation platform(project(':dependencies'))
-    spock21groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
+    spock21groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.25')
     spock21groovy30Implementation platform('org.spockframework:spock-bom:2.1-groovy-3.0')
     spock21groovy30Implementation project(':spock-outputcapture')
     spock21groovy30Implementation 'org.slf4j:slf4j-simple'
@@ -65,14 +65,14 @@ dependencies {
     spock22groovy25Implementation 'org.spockframework:spock-core'
 
     spock22groovy30Implementation platform(project(':dependencies'))
-    spock22groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
+    spock22groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.25')
     spock22groovy30Implementation platform('org.spockframework:spock-bom:2.2-groovy-3.0')
     spock22groovy30Implementation project(':spock-outputcapture')
     spock22groovy30Implementation 'org.slf4j:slf4j-simple'
     spock22groovy30Implementation 'org.spockframework:spock-core'
 
     spock22groovy40Implementation platform(project(':dependencies'))
-    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.20')
+    spock22groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.33')
     spock22groovy40Implementation platform('org.spockframework:spock-bom:2.2-groovy-4.0')
     spock22groovy40Implementation project(':spock-outputcapture')
     spock22groovy40Implementation 'org.slf4j:slf4j-simple'
@@ -86,14 +86,14 @@ dependencies {
     spock23groovy25Implementation 'org.spockframework:spock-core'
 
     spock23groovy30Implementation platform(project(':dependencies'))
-    spock23groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
+    spock23groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.25')
     spock23groovy30Implementation platform('org.spockframework:spock-bom:2.3-groovy-3.0')
     spock23groovy30Implementation project(':spock-outputcapture')
     spock23groovy30Implementation 'org.slf4j:slf4j-simple'
     spock23groovy30Implementation 'org.spockframework:spock-core'
 
     spock23groovy40Implementation platform(project(':dependencies'))
-    spock23groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.20')
+    spock23groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.33')
     spock23groovy40Implementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
     spock23groovy40Implementation project(':spock-outputcapture')
     spock23groovy40Implementation 'org.slf4j:slf4j-simple'
@@ -107,14 +107,14 @@ dependencies {
     spock24groovy25Implementation 'org.spockframework:spock-core'
 
     spock24groovy30Implementation platform(project(':dependencies'))
-    spock24groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.21')
+    spock24groovy30Implementation platform('org.codehaus.groovy:groovy-bom:3.0.25')
     spock24groovy30Implementation platform('org.spockframework:spock-bom:2.4-M2-groovy-3.0')
     spock24groovy30Implementation project(':spock-outputcapture')
     spock24groovy30Implementation 'org.slf4j:slf4j-simple'
     spock24groovy30Implementation 'org.spockframework:spock-core'
 
     spock24groovy40Implementation platform(project(':dependencies'))
-    spock24groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.20')
+    spock24groovy40Implementation platform('org.apache.groovy:groovy-bom:4.0.33')
     spock24groovy40Implementation platform('org.spockframework:spock-bom:2.4-M2-groovy-4.0')
     spock24groovy40Implementation project(':spock-outputcapture')
     spock24groovy40Implementation 'org.slf4j:slf4j-simple'

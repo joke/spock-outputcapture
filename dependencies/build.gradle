@@ -7,7 +7,7 @@ javaPlatform {
 }
 
 dependencies {
-    api platform('org.slf4j:slf4j-bom:2.0.13')
+    api platform('org.slf4j:slf4j-bom:2.0.20')
 
-    api 'org.projectlombok:lombok:1.18.32'
+    api 'org.projectlombok:lombok:1.18.48'
 }
